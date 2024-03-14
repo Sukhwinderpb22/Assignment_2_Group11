@@ -110,6 +110,8 @@ namespace Assignment_2_Group11.Tests
             // Assert
             Assert.AreEqual(length * width, actualArea);
         }
+
+
         // Additional GetLength Tests
         [Test]
         public void GetLength_AfterSettingNewLength_ReturnsUpdatedLength()
@@ -264,6 +266,36 @@ namespace Assignment_2_Group11.Tests
             Assert.AreEqual(length * width, actualArea);
         }
 
+        [Test]
+        public void GetArea_WithLengthOneAndWidthOne_ReturnsOne()
+        {
+            //Arrange
+            int length = 1;
+            int width = 1;
+            _rectangle.SetLength(length);
+            _rectangle.SetWidth(width);
 
+            //Act
+            int actualArea = _rectangle.GetArea();
+
+            //Assert
+            Assert.AreEqual(1, actualArea);
+        }
+
+        [Test]
+        public void GetArea_WithLargeValues_ReturnsCorrectArea()
+        {
+            // Arrange
+            int length = 1000;
+            int width = 500;
+            _rectangle.SetLength(length);
+            _rectangle.SetWidth(width);
+
+            //Act
+            int area = _rectangle.GetArea();
+
+            // Assert
+            Assert.AreEqual(length * width, area);
+        }
     }
 }
