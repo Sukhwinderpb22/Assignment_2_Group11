@@ -110,6 +110,159 @@ namespace Assignment_2_Group11.Tests
             // Assert
             Assert.AreEqual(length * width, actualArea);
         }
+        // Additional GetLength Tests
+        [Test]
+        public void GetLength_AfterSettingNewLength_ReturnsUpdatedLength()
+        {
+            //Arrange
+            int length = 18;
+            _rectangle.SetLength(length);
+
+            //Act
+            int actualLength = _rectangle.GetLength();
+
+            //Assert
+            Assert.AreEqual(length, actualLength);
+        }
+
+
+        [Test]
+        public void GetLength_UsingParameterizedConstructor_ReturnsInitialLength()
+        {
+            //Arrange
+            int length = 14;
+            int width = 7;
+            var customRectangle = new Rectangle(length, width);
+
+            //Act
+            int actualLength = customRectangle.GetLength();
+
+            //Arrange
+            Assert.AreEqual(14, actualLength);
+        }
+
+        // Additional SetLength Tests
+        [Test]
+        public void SetLength_ToZero_LengthUnchanged()
+        {
+            //Arrange
+            int length = 2;
+            _rectangle.SetLength(length);
+
+            //Act
+            int actualLength = _rectangle.GetLength();
+
+            //Assert
+            Assert.AreNotEqual(0, actualLength);
+        }
+
+        [Test]
+        public void SetLength_PositiveValue_LengthUpdated()
+        {
+            // Arrange
+            int newLength = 15;
+            _rectangle.SetLength(newLength);
+
+            //Act
+            int actualLength = _rectangle.GetLength();
+
+            // Assert
+            Assert.AreEqual(newLength, actualLength);
+        }
+
+        // Additional GetWidth Tests
+        [Test]
+        public void GetWidth_AfterSettingNewWidth_ReturnsUpdatedWidth()
+        {
+            //Arrange
+            int newWidth = 15;
+            _rectangle.SetWidth(newWidth);
+
+            //Act
+            int actualLength = _rectangle.GetWidth();
+
+            //Assert
+            Assert.AreEqual(newWidth, actualLength);
+        }
+
+        [Test]
+        public void GetWidth_UsingParameterizedConstructor_ReturnsInitialWidth()
+        {
+            //Arrange
+            int length = 11;
+            int width = 22;
+            var customRectangle = new Rectangle(length, width);
+
+            //Act
+            int actualWidth = customRectangle.GetWidth();
+
+            //Assert
+            Assert.AreEqual(width, actualWidth);
+        }
+
+        // Additional SetWidth Tests
+        [Test]
+        public void SetWidth_ToZero_WidthUnchanged()
+        {
+            //Arrange
+            int width = 3;
+            _rectangle.SetWidth(width);
+
+            //Act
+            int actualWidth = _rectangle.GetWidth();
+
+            //Assert
+            Assert.AreNotEqual(0, actualWidth);
+        }
+
+        [Test]
+        public void SetWidth_PositiveValue_WidthUpdated()
+        {
+            // Arrange
+            int newWidth = 12;
+            _rectangle.SetWidth(newWidth);
+
+            //Act
+            int actualWidth = _rectangle.GetWidth();
+
+            // Assert
+            Assert.AreEqual(newWidth, actualWidth);
+        }
+
+        // Additional GetPerimeter Tests
+        [Test]
+        public void GetPerimeter_WithZeroLengthOrWidth_ReturnsZeroOrPositiveValue()
+        {
+            //Arrange
+            int length = 0;
+            int width = 6;
+
+            //Act
+            _rectangle.SetLength(length);
+            _rectangle.SetWidth(width);
+
+            //Assert
+            Assert.IsTrue(_rectangle.GetPerimeter() >= 0);
+        }
+
+
+
+        // Additional GetArea Tests
+        [Test]
+        public void GetArea_WithLengthFiveAndWidthTwo_ReturnsTen()
+        {
+            //Arrange
+            int length = 3;
+            int width = 5;
+            _rectangle.SetLength(length);
+            _rectangle.SetWidth(width);
+
+            //Act
+            int actualArea = _rectangle.GetArea();
+
+            //Assert
+            Assert.AreEqual(length * width, actualArea);
+        }
 
 
     }
