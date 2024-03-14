@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Assignment_2_Group11;
+using Assignment02;
 
-namespace Assignment_2_Group11
+namespace Assignment02
 {
 
     public class Rectangle

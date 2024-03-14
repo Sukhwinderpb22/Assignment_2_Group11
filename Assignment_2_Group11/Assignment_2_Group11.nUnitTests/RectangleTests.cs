@@ -2,7 +2,7 @@ using NUnit.Framework;
 using System.Drawing;
 using System.Runtime.InteropServices;
 
-namespace Assignment_2_Group11.Tests
+namespace Assignment02.Tests
 {
 
     public class RectangleTest
