@@ -2,7 +2,7 @@ using NUnit.Framework;
 using System.Drawing;
 using System.Runtime.InteropServices;
 
-namespace Assignment02.Tests
+namespace Assignment_2_Group11.Tests
 {
 
     public class RectangleTest
@@ -286,8 +286,8 @@ namespace Assignment02.Tests
         public void GetArea_WithLargeValues_ReturnsCorrectArea()
         {
             // Arrange
-            int length = 1000;
-            int width = 500;
+            int length = 1100;
+            int width = 1100;
             _rectangle.SetLength(length);
             _rectangle.SetWidth(width);
 
